@@ -7,11 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.view.View;
 
 import com.example.danby.myapplication.util.AppUser;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.login.LoginManager;
+
+import static com.example.danby.myapplication.R.id.button;
 
 
 public class MainActivity extends FragmentActivity {
@@ -63,9 +66,19 @@ public class MainActivity extends FragmentActivity {
                     accessToken = AccessToken.getCurrentAccessToken();
                     if(accessToken != null) {
                         // bring up setup profile fragment
+                       // public void onClick(View view) {
+
+                        // Start NewActivity.class
+                        Intent myIntent = new Intent(MainActivity.this, EditProfile.class);
+                        startActivity(myIntent);
                     }
+
                 }
             });
+
+            // Capture button clicks
+
+
 
             user.getFbFriendList();
             displayFriends();
@@ -109,4 +122,6 @@ public class MainActivity extends FragmentActivity {
         super.onDestroy();
         accessTokenTracker.stopTracking();
     }
+
+
 }
