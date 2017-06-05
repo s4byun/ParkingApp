@@ -30,7 +30,7 @@ public class LoginActivity extends FragmentActivity {
                 Log.i("fb_login", "Login success: " + loginResult.toString());
                 loginButton.setVisibility(View.GONE);
                 setResult(AppConfig.FB_LOGIN_RETURN_CODE_SUCCESS);
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                startActivity(new Intent(LoginActivity.this, MapsActivity.class));
                 finish();
             }
 
