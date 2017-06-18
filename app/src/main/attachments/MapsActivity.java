@@ -72,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         ProfileFragment fragment = new ProfileFragment();
-        fragmentTransaction.replace(R.id.fragmentmain, fragment);
+        fragmentTransaction.replace(R.id.fragmentblank, fragment);
         fragmentTransaction.commit();
 
     }
@@ -80,7 +80,7 @@ public class MapsActivity extends FragmentActivity implements
         android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
         android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         CarInfoFragment fragment = new CarInfoFragment();
-        fragmentTransaction.replace(R.id.fragmentmain, fragment);
+        fragmentTransaction.replace(R.id.fragmentblank, fragment);
         fragmentTransaction.commit();
     }
 
