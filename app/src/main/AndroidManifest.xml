@@ -10,6 +10,7 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,8 +23,7 @@
             android:value="@string/facebook_app_id" />
 
         <!-- Login Activity -->
-        <activity android:name=".LoginActivity">
-        </activity>
+        <activity android:name=".LoginActivity" />
 
         <!-- Facebook Login Activities -->
         <activity
@@ -59,9 +59,14 @@
             android:label="@string/title_activity_maps">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CardInfoSettings" />
+        <activity android:name=".CarInfoSettings" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ShowHistoryActivity"></activity>
     </application>
 
 </manifest>
