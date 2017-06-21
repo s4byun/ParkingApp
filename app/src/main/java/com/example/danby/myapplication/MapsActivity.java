@@ -69,22 +69,6 @@ public class MapsActivity extends FragmentActivity implements
         mapFragment.getMapAsync(this);
         Log.d("lifecycle", "onCreate");
     }
-    public void ChangeFragment (View view){
-
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        ProfileFragment fragment = new ProfileFragment();
-        fragmentTransaction.replace(R.id.fragmentmain, fragment);
-        fragmentTransaction.commit();
-
-    }
-    public void CarInfoFragnment (View view){
-        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
-        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        CarInfoFragment fragment = new CarInfoFragment();
-        fragmentTransaction.replace(R.id.fragmentmain, fragment);
-        fragmentTransaction.commit();
-    }
 
     private void ensureFBLogin() {
         accessTokenTracker = new AccessTokenTracker() {
