@@ -53,6 +53,7 @@ public class MapsActivity extends FragmentActivity implements
     Marker mCurrLocationMarker;
 
     Button logoutButton;
+    Button profileButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +108,15 @@ public class MapsActivity extends FragmentActivity implements
                     }
                     Intent intent = new Intent(MapsActivity.this, LoginActivity.class);
                     startActivityForResult(intent, LOGIN_ACTIVITY_REQUEST_CODE);
+                }
+            });
+            profileButton = (Button) findViewById(R.id.button);
+            profileButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    Intent intent = new Intent(MapsActivity.this, ProfileActivity.class);
+                    startActivityForResult(intent,1);
                 }
             });
         }

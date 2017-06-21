@@ -1,0 +1,1215 @@
+[1mdiff --git a/.idea/misc.xml b/.idea/misc.xml[m
+[1mindex fbb6828..5d19981 100644[m
+[1m--- a/.idea/misc.xml[m
+[1m+++ b/.idea/misc.xml[m
+[36m@@ -37,7 +37,7 @@[m
+     <ConfirmationsSetting value="0" id="Add" />[m
+     <ConfirmationsSetting value="0" id="Remove" />[m
+   </component>[m
+[31m-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">[m
+[32m+[m[32m  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">[m
+     <output url="file://$PROJECT_DIR$/build/classes" />[m
+   </component>[m
+   <component name="ProjectType">[m
+[1mdiff --git a/.idea/modules.xml b/.idea/modules.xml[m
+[1mindex 54b7b3f..703205a 100644[m
+[1m--- a/.idea/modules.xml[m
+[1m+++ b/.idea/modules.xml[m
+[36m@@ -3,6 +3,7 @@[m
+   <component name="ProjectModuleManager">[m
+     <modules>[m
+       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />[m
+[32m+[m[32m      <module fileurl="file://$PROJECT_DIR$/ParkingApp.iml" filepath="$PROJECT_DIR$/ParkingApp.iml" />[m
+       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />[m
+     </modules>[m
+   </component>[m
+[1mdiff --git a/.idea/vcs.xml b/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..94a25f7[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$" vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/attachments/AppConfig.java b/app/src/main/attachments/AppConfig.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2bb737a[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/AppConfig.java[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32m/**[m
+[32m+[m[32m * Created by danby on 5/26/2017.[m
+[32m+[m[32m */[m
+[32m+[m
+[32m+[m[32mpublic class AppConfig {[m
+[32m+[m[32m    // INTERNAL GLOBAL VARIABLES (DO NOT MODIFY)[m
+[32m+[m[32m    final public static int FB_LOGIN_RETURN_CODE_SUCCESS = 0xFB00;[m
+[32m+[m[32m    final public static int FB_LOGIN_RETURN_CODE_FAIL = 0xFB01;[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/BlankFragment.java b/app/src/main/attachments/BlankFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..35b9468[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/BlankFragment.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m[32mpublic class BlankFragment extends Fragment {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_blank, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/CarInfoFragment.java b/app/src/main/attachments/CarInfoFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a70b15[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/CarInfoFragment.java[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mpublic class CarInfoFragment extends Fragment {[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_car_info, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/LoginActivity.java b/app/src/main/attachments/LoginActivity.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..95beadf[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/LoginActivity.java[m
+[36m@@ -0,0 +1,55 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.content.Intent;[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.FragmentActivity;[m
+[32m+[m[32mimport android.util.Log;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m
+[32m+[m[32mimport com.facebook.CallbackManager;[m
+[32m+[m[32mimport com.facebook.FacebookCallback;[m
+[32m+[m[32mimport com.facebook.FacebookException;[m
+[32m+[m[32mimport com.facebook.login.LoginResult;[m
+[32m+[m[32mimport com.facebook.login.widget.LoginButton;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mpublic class LoginActivity extends FragmentActivity {[m
+[32m+[m[32m    private LoginButton loginButton;[m
+[32m+[m[32m    private CallbackManager callbackManager;[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void onCreate(Bundle savedInstanceState) {[m
+[32m+[m[32m        super.onCreate(savedInstanceState);[m
+[32m+[m[32m        callbackManager = CallbackManager.Factory.create();[m
+[32m+[m[32m        setContentView(R.layout.activity_login);[m
+[32m+[m[32m        loginButton = (LoginButton) findViewById(R.id.login_button);[m
+[32m+[m[32m        loginButton.setReadPermissions("user_friends");[m
+[32m+[m[32m        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {[m
+[32m+[m[32m            @Override[m
+[32m+[m[32m            public void onSuccess(LoginResult loginResult) {[m
+[32m+[m[32m                Log.i("fb_login", "Login success: " + loginResult.toString());[m
+[32m+[m[32m                loginButton.setVisibility(View.GONE);[m
+[32m+[m[32m                setResult(AppConfig.FB_LOGIN_RETURN_CODE_SUCCESS);[m
+[32m+[m[32m                startActivity(new Intent(LoginActivity.this, MapsActivity.class));[m
+[32m+[m[32m                finish();[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            @Override[m
+[32m+[m[32m            public void onCancel() {[m
+[32m+[m[32m                Log.i("fb_login", "Login cancelled");[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            @Override[m
+[32m+[m[32m            public void onError(FacebookException e) {[m
+[32m+[m[32m                Log.e("fb_login", e.toString());[m
+[32m+[m[32m                setResult(AppConfig.FB_LOGIN_RETURN_CODE_FAIL);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        });[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void onActivityResult(int requestCode, int resultCode, Intent data) {[m
+[32m+[m[32m        super.onActivityResult(requestCode, resultCode, data);[m
+[32m+[m[32m        callbackManager.onActivityResult(requestCode, resultCode, data);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/MainFragment.java b/app/src/main/attachments/MainFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..30ee7e1[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/MainFragment.java[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m[32mpublic class MainFragment extends Fragment {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_main, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/MapsActivity.java b/app/src/main/attachments/MapsActivity.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2060b98[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/MapsActivity.java[m
+[36m@@ -0,0 +1,300 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.Manifest;[m
+[32m+[m[32mimport android.content.Intent;[m
+[32m+[m[32mimport android.content.pm.PackageManager;[m
+[32m+[m[32mimport android.location.Location;[m
+[32m+[m[32mimport android.os.Build;[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.annotation.NonNull;[m
+[32m+[m[32mimport android.support.annotation.Nullable;[m
+[32m+[m[32mimport android.support.v4.app.ActivityCompat;[m
+[32m+[m[32mimport android.support.v4.app.FragmentActivity;[m
+[32m+[m[32mimport android.support.v4.content.ContextCompat;[m
+[32m+[m[32mimport android.util.Log;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.widget.Button;[m
+[32m+[m
+[32m+[m[32mimport com.facebook.AccessToken;[m
+[32m+[m[32mimport com.facebook.AccessTokenTracker;[m
+[32m+[m[32mimport com.facebook.login.LoginManager;[m
+[32m+[m[32mimport com.google.android.gms.common.ConnectionResult;[m
+[32m+[m[32mimport com.google.android.gms.common.api.GoogleApiClient;[m
+[32m+[m[32mimport com.google.android.gms.location.LocationListener;[m
+[32m+[m[32mimport com.google.android.gms.location.LocationRequest;[m
+[32m+[m[32mimport com.google.android.gms.location.LocationServices;[m
+[32m+[m[32mimport com.google.android.gms.maps.CameraUpdateFactory;[m
+[32m+[m[32mimport com.google.android.gms.maps.GoogleMap;[m
+[32m+[m[32mimport com.google.android.gms.maps.OnMapReadyCallback;[m
+[32m+[m[32mimport com.google.android.gms.maps.SupportMapFragment;[m
+[32m+[m[32mimport com.google.android.gms.maps.model.BitmapDescriptorFactory;[m
+[32m+[m[32mimport com.google.android.gms.maps.model.LatLng;[m
+[32m+[m[32mimport com.google.android.gms.maps.model.Marker;[m
+[32m+[m[32mimport com.google.android.gms.maps.model.MarkerOptions;[m
+[32m+[m
+[32m+[m[32mpublic class MapsActivity extends FragmentActivity implements[m
+[32m+[m[32m        OnMapReadyCallback,[m
+[32m+[m[32m        GoogleApiClient.ConnectionCallbacks,[m
+[32m+[m[32m        GoogleApiClient.OnConnectionFailedListener,[m
+[32m+[m[32m        LocationListener {[m
+[32m+[m
+[32m+[m[32m    GoogleMap mMap;[m
+[32m+[m[32m    GoogleApiClient mGoogleApiClient;[m
+[32m+[m
+[32m+[m[32m    final int LOGIN_ACTIVITY_REQUEST_CODE = 0;[m
+[32m+[m[32m    final int LOCATION_REQUEST_CODE = 1;[m
+[32m+[m
+[32m+[m[32m    AccessToken accessToken;[m
+[32m+[m[32m    AccessTokenTracker accessTokenTracker;[m
+[32m+[m
+[32m+[m[32m    Location mLastLocation;[m
+[32m+[m[32m    LocationRequest mLocationRequest;[m
+[32m+[m[32m    Marker mCurrLocationMarker;[m
+[32m+[m
+[32m+[m[32m    Button logoutButton;[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void onCreate(Bundle savedInstanceState) {[m
+[32m+[m[32m        super.onCreate(savedInstanceState);[m
+[32m+[m[32m        setContentView(R.layout.activity_maps);[m
+[32m+[m[32m        ensureFBLogin();[m
+[32m+[m[32m        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {[m
+[32m+[m[32m            checkLocationPermission();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        // Obtain the SupportMapFragment and get notified when the map is ready to be used.[m
+[32m+[m[32m        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()[m
+[32m+[m[32m                .findFragmentById(R.id.map);[m
+[32m+[m[32m        mapFragment.getMapAsync(this);[m
+[32m+[m[32m        Log.d("lifecycle", "onCreate");[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public void ChangeFragment (View view){[m
+[32m+[m
+[32m+[m[32m        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();[m
+[32m+[m[32m        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();[m
+[32m+[m[32m        ProfileFragment fragment = new ProfileFragment();[m
+[32m+[m[32m        fragmentTransaction.replace(R.id.fragmentblank, fragment);[m
+[32m+[m[32m        fragmentTransaction.commit();[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public void CarInfoFragnment (View view){[m
+[32m+[m[32m        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();[m
+[32m+[m[32m        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();[m
+[32m+[m[32m        CarInfoFragment fragment = new CarInfoFragment();[m
+[32m+[m[32m        fragmentTransaction.replace(R.id.fragmentblank, fragment);[m
+[32m+[m[32m        fragmentTransaction.commit();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    private void ensureFBLogin() {[m
+[32m+[m[32m        accessTokenTracker = new AccessTokenTracker() {[m
+[32m+[m[32m            @Override[m
+[32m+[m[32m            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {[m
+[32m+[m[32m                accessToken = currentAccessToken;[m
+[32m+[m[32m            }[m
+[32m+[m[32m        };[m
+[32m+[m[32m        accessToken = AccessToken.getCurrentAccessToken();[m
+[32m+[m[32m        if (accessToken == null) {[m
+[32m+[m[32m            Intent intent = new Intent(this, LoginActivity.class);[m
+[32m+[m[32m            startActivityForResult(intent, LOGIN_ACTIVITY_REQUEST_CODE);[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m            logoutButton = (Button) findViewById(R.id.logout_button);[m
+[32m+[m[32m            logoutButton.setOnClickListener(new View.OnClickListener() {[m
+[32m+[m[32m                @Override[m
+[32m+[m[32m                public void onClick(View v) {[m
+[32m+[m[32m                    accessToken = AccessToken.getCurrentAccessToken();[m
+[32m+[m[32m                    if (accessToken != null) {[m
+[32m+[m[32m                        LoginManager.getInstance().logOut();[m
+[32m+[m[32m                    }[m
+[32m+[m[32m                    Intent intent = new Intent(MapsActivity.this, LoginActivity.class);[m
+[32m+[m[32m                    startActivityForResult(intent, LOGIN_ACTIVITY_REQUEST_CODE);[m
+[32m+[m[32m                }[m
+[32m+[m[32m            });[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void onResume() {[m
+[32m+[m[32m        super.onResume();[m
+[32m+[m[32m        /*ensureFBLogin();[m
+[32m+[m[32m        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {[m
+[32m+[m[32m            checkLocationPermission();[m
+[32m+[m[32m        }[m
+[32m+[m[32m        // Obtain the SupportMapFragment and get notified when the map is ready to be used.[m
+[32m+[m[32m        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()[m
+[32m+[m[32m                .findFragmentById(R.id.map);[m
+[32m+[m[32m        mapFragment.getMapAsync(this);*/[m
+[32m+[m[32m        Log.d("lifecycle", "onResume");[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    protected void onStart() {[m
+[32m+[m[32m        super.onStart();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    protected void onStop() {[m
+[32m+[m[32m        super.onStop();[m
+[32m+[m[32m        if (mGoogleApiClient != null && mGoogleApiClient.isConnected()) {[m
+[32m+[m[32m            mGoogleApiClient.disconnect();[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    protected void onActivityResult(int requestCode, int resultCode, Intent data) {[m
+[32m+[m[32m        super.onActivityResult(requestCode, resultCode, data);[m
+[32m+[m[32m        if (requestCode == LOGIN_ACTIVITY_REQUEST_CODE) {[m
+[32m+[m[32m            if (resultCode == AppConfig.FB_LOGIN_RETURN_CODE_SUCCESS) {[m
+[32m+[m[32m                Log.i("fb_login", "MapsActivity received FB_LOGIN_RETURN_CODE_SUCCESS");[m
+[32m+[m[32m            } else if (resultCode == AppConfig.FB_LOGIN_RETURN_CODE_FAIL) {[m
+[32m+[m[32m                Log.e("fb_login", "MapsActivity received FB_LOGIN_RETURN_CODE_FAIL");[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onDestroy() {[m
+[32m+[m[32m        super.onDestroy();[m
+[32m+[m[32m        accessTokenTracker.stopTracking();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Manipulates the map once available.[m
+[32m+[m[32m     * This callback is triggered when the map is ready to be used.[m
+[32m+[m[32m     * This is where we can add markers or lines, add listeners or move the camera. In this case,[m
+[32m+[m[32m     * we just add a marker near Sydney, Australia.[m
+[32m+[m[32m     * If Google Play services is not installed on the device, the user will be prompted to install[m
+[32m+[m[32m     * it inside the SupportMapFragment. This method will only be triggered once the user has[m
+[32m+[m[32m     * installed Google Play services and returned to the app.[m
+[32m+[m[32m     */[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onMapReady(GoogleMap googleMap) {[m
+[32m+[m[32m        mMap = googleMap;[m
+[32m+[m
+[32m+[m[32m        //Initialize Google Play Services[m
+[32m+[m[32m        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {[m
+[32m+[m[32m            if (ContextCompat.checkSelfPermission(this,[m
+[32m+[m[32m                    Manifest.permission.ACCESS_FINE_LOCATION)[m
+[32m+[m[32m                    == PackageManager.PERMISSION_GRANTED) {[m
+[32m+[m[32m                buildGoogleApiClient();[m
+[32m+[m[32m                mMap.setMyLocationEnabled(true);[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        else {[m
+[32m+[m[32m            buildGoogleApiClient();[m
+[32m+[m[32m            mMap.setMyLocationEnabled(true);[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    protected synchronized void buildGoogleApiClient() {[m
+[32m+[m[32m        mGoogleApiClient = new GoogleApiClient.Builder(this)[m
+[32m+[m[32m                .addConnectionCallbacks(this)[m
+[32m+[m[32m                .addOnConnectionFailedListener(this)[m
+[32m+[m[32m                .addApi(LocationServices.API)[m
+[32m+[m[32m                .build();[m
+[32m+[m[32m        mGoogleApiClient.connect();[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onConnected(@Nullable Bundle bundle) {[m
+[32m+[m[32m        mLocationRequest = new LocationRequest();[m
+[32m+[m[32m        mLocationRequest.setInterval(1000);[m
+[32m+[m[32m        mLocationRequest.setFastestInterval(1000);[m
+[32m+[m[32m        mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);[m
+[32m+[m[32m        if (ContextCompat.checkSelfPermission(this,[m
+[32m+[m[32m                Manifest.permission.ACCESS_FINE_LOCATION)[m
+[32m+[m[32m                == PackageManager.PERMISSION_GRANTED) {[m
+[32m+[m[32m            LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public boolean checkLocationPermission(){[m
+[32m+[m[32m        if (ContextCompat.checkSelfPermission(this,[m
+[32m+[m[32m                Manifest.permission.ACCESS_FINE_LOCATION)[m
+[32m+[m[32m                != PackageManager.PERMISSION_GRANTED) {[m
+[32m+[m
+[32m+[m[32m            // Asking user if explanation is needed[m
+[32m+[m[32m            if (ActivityCompat.shouldShowRequestPermissionRationale(this,[m
+[32m+[m[32m                    Manifest.permission.ACCESS_FINE_LOCATION)) {[m
+[32m+[m
+[32m+[m[32m                // Show an explanation to the user *asynchronously* -- don't block[m
+[32m+[m[32m                // this thread waiting for the user's response! After the user[m
+[32m+[m[32m                // sees the explanation, try again to request the permission.[m
+[32m+[m
+[32m+[m[32m                //Prompt the user once explanation has been shown[m
+[32m+[m[32m                ActivityCompat.requestPermissions(this,[m
+[32m+[m[32m                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},[m
+[32m+[m[32m                        LOCATION_REQUEST_CODE);[m
+[32m+[m[32m            } else {[m
+[32m+[m[32m                // No explanation needed, we can request the permission.[m
+[32m+[m[32m                ActivityCompat.requestPermissions(this,[m
+[32m+[m[32m                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},[m
+[32m+[m[32m                        LOCATION_REQUEST_CODE);[m
+[32m+[m[32m            }[m
+[32m+[m[32m            return false;[m
+[32m+[m[32m        } else {[m
+[32m+[m[32m            return true;[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {[m
+[32m+[m[32m        switch (requestCode) {[m
+[32m+[m[32m            case LOCATION_REQUEST_CODE: {[m
+[32m+[m[32m                // If request is cancelled, the result arrays are empty.[m
+[32m+[m[32m                if (grantResults.length > 0[m
+[32m+[m[32m                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {[m
+[32m+[m
+[32m+[m[32m                    // Permission was granted.[m
+[32m+[m[32m                    if (ContextCompat.checkSelfPermission(this,[m
+[32m+[m[32m                            Manifest.permission.ACCESS_FINE_LOCATION)[m
+[32m+[m[32m                            == PackageManager.PERMISSION_GRANTED) {[m
+[32m+[m
+[32m+[m[32m                        if (mGoogleApiClient == null) {[m
+[32m+[m[32m                            buildGoogleApiClient();[m
+[32m+[m[32m                        }[m
+[32m+[m[32m                        mMap.setMyLocationEnabled(true);[m
+[32m+[m[32m                    }[m
+[32m+[m
+[32m+[m[32m                } else {[m
+[32m+[m[32m                    // Permission denied, Disable the functionality that depends on this permission.[m
+[32m+[m[32m                }[m
+[32m+[m[32m            }[m
+[32m+[m
+[32m+[m[32m            // other 'case' lines to check for other permissions this app might request.[m
+[32m+[m[32m            //You can add here other case statements according to your requirement.[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onConnectionSuspended(int i) {[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void onLocationChanged(Location location) {[m
+[32m+[m[32m        mLastLocation = location;[m
+[32m+[m[32m        if (mCurrLocationMarker != null) {[m
+[32m+[m[32m            mCurrLocationMarker.remove();[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        //Place current location marker[m
+[32m+[m[32m        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());[m
+[32m+[m[32m        MarkerOptions markerOptions = new MarkerOptions();[m
+[32m+[m[32m        markerOptions.flat(true);[m
+[32m+[m[32m        markerOptions.position(latLng);[m
+[32m+[m[32m        markerOptions.title("Current Position");[m
+[32m+[m[32m        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));[m
+[32m+[m[32m        mCurrLocationMarker = mMap.addMarker(markerOptions);[m
+[32m+[m
+[32m+[m[32m        //move map camera[m
+[32m+[m[32m        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 11));[m
+[32m+[m
+[32m+[m[32m        //stop location updates[m
+[32m+[m[32m        if (mGoogleApiClient != null) {[m
+[32m+[m[32m            LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient, this);[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/ProfileFragment.java b/app/src/main/attachments/ProfileFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4d7a2f0[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/ProfileFragment.java[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mpublic class ProfileFragment extends Fragment  {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_profile, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/WhiteFragment.java b/app/src/main/attachments/WhiteFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0e6bd41[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/WhiteFragment.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m[32mpublic class WhiteFragment extends Fragment {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_white, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/attachments/activity_login.xml b/app/src/main/attachments/activity_login.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b75d4a3[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/activity_login.xml[m
+[36m@@ -0,0 +1,14 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    android:orientation="vertical"[m
+[32m+[m[32m    android:gravity="center"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent">[m
+[32m+[m
+[32m+[m[32m    <com.facebook.login.widget.LoginButton[m
+[32m+[m[32m        android:id="@+id/login_button"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_marginTop="30dp"[m
+[32m+[m[32m        android:layout_marginBottom="30dp" />[m
+[32m+[m[32m</LinearLayout>[m
+\ No newline at end of file[m
+[1mdiff --git a/app/src/main/attachments/activity_maps.xml b/app/src/main/attachments/activity_maps.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6b33991[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/activity_maps.xml[m
+[36m@@ -0,0 +1,28 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    tools:context=".MapsActivity" >[m
+[32m+[m
+[32m+[m[32m    <fragment xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m        xmlns:map="http://schemas.android.com/apk/res-auto"[m
+[32m+[m[32m        xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m        android:id="@+id/map"[m
+[32m+[m[32m        android:name="com.google.android.gms.maps.SupportMapFragment"[m
+[32m+[m[32m        android:layout_width="match_parent"[m
+[32m+[m[32m        android:layout_height="match_parent"[m
+[32m+[m[32m        tools:context="com.example.danby.myapplication.MapsActivity" />[m
+[32m+[m
+[32m+[m[32m    <fragment[m
+[32m+[m[32m        android:name="com.example.danby.myapplication.MainFragment"[m
+[32m+[m[32m        android:layout_width="match_parent"[m
+[32m+[m[32m        android:layout_height="match_parent"[m
+[32m+[m[32m        android:id="@+id/fragmentmain" />[m
+[32m+[m
+[32m+[m[32m    <fragment[m
+[32m+[m[32m        android:name="com.example.danby.myapplication.BlankFragment"[m
+[32m+[m[32m        android:layout_width="match_parent"[m
+[32m+[m[32m        android:layout_height="match_parent"[m
+[32m+[m[32m        android:id="@+id/fragmentblank" />[m
+[32m+[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/attachments/fragment_blank.xml b/app/src/main/attachments/fragment_blank.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..65712de[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/fragment_blank.xml[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    tools:context="com.example.danby.myapplication.BlankFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/attachments/fragment_car_info.xml b/app/src/main/attachments/fragment_car_info.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8ff4c55[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/fragment_car_info.xml[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    android:background="@android:color/background_light"[m
+[32m+[m[32m    tools:context="com.example.danby.myapplication.CarInfoFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:layout_width="match_parent"[m
+[32m+[m[32m        android:layout_height="match_parent"[m
+[32m+[m[32m        android:text="CAR INFORMATION FRAGMENT" />[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/attachments/fragment_main.xml b/app/src/main/attachments/fragment_main.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6f20a10[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/fragment_main.xml[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32m<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    tools:context=".MainFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/logout_button"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:text="Logout" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button2"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="21dp"[m
+[32m+[m[32m        android:layout_alignBottom="@+id/logout_button"[m
+[32m+[m[32m        android:layout_alignParentTop="true"[m
+[32m+[m[32m        android:layout_marginLeft="47dp"[m
+[32m+[m[32m        android:layout_marginStart="47dp"[m
+[32m+[m[32m        android:layout_toEndOf="@+id/logout_button"[m
+[32m+[m[32m        android:layout_toRightOf="@+id/logout_button"[m
+[32m+[m[32m        android:onClick="ChangeFragment"[m
+[32m+[m[32m        android:text="Profile" />[m
+[32m+[m
+[32m+[m[32m</RelativeLayout>[m
+[1mdiff --git a/app/src/main/attachments/fragment_profile.xml b/app/src/main/attachments/fragment_profile.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8593540[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/fragment_profile.xml[m
+[36m@@ -0,0 +1,89 @@[m
+[32m+[m[32m<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:id="@+id/fragmentOne"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    android:background="@android:color/background_light"[m
+[32m+[m[32m    tools:context=".ProfileFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button3"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentBottom="true"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:text="LogOut" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button4"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_above="@+id/button3"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:text="Favorites" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button5"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_above="@+id/button4"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:text="History" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button6"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_below="@+id/textView2"[m
+[32m+[m[32m        android:text="getcardinfo from Database" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button8"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_alignParentTop="true"[m
+[32m+[m[32m        android:layout_marginTop="45dp"[m
+[32m+[m[32m        android:onClick="CarInfoFragnment"[m
+[32m+[m[32m        android:text="getCarInfo from Database" />[m
+[32m+[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:id="@+id/textView"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_alignParentTop="true"[m
+[32m+[m[32m        android:layout_marginTop="34dp"[m
+[32m+[m[32m        android:text="Car Information"[m
+[32m+[m[32m        />[m
+[32m+[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:id="@+id/textView2"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_below="@+id/button8"[m
+[32m+[m[32m        android:text="Payment Information" />[m
+[32m+[m
+[32m+[m[32m</RelativeLayout>[m
+[1mdiff --git a/app/src/main/attachments/fragment_white.xml b/app/src/main/attachments/fragment_white.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..42ffcdc[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/attachments/fragment_white.xml[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    android:background="?attr/colorPrimary"[m
+[32m+[m[32m    tools:context="com.example.danby.myapplication.WhiteFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/java/com/example/danby/myapplication/BlankFragment.java b/app/src/main/java/com/example/danby/myapplication/BlankFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..35b9468[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/danby/myapplication/BlankFragment.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m[32mpublic class BlankFragment extends Fragment {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_blank, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/java/com/example/danby/myapplication/CarInfoFragment.java b/app/src/main/java/com/example/danby/myapplication/CarInfoFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8a70b15[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/danby/myapplication/CarInfoFragment.java[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mpublic class CarInfoFragment extends Fragment {[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_car_info, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/java/com/example/danby/myapplication/MainFragment.java b/app/src/main/java/com/example/danby/myapplication/MainFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..30ee7e1[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/danby/myapplication/MainFragment.java[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m[32mpublic class MainFragment extends Fragment {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_main, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/java/com/example/danby/myapplication/MapsActivity.java b/app/src/main/java/com/example/danby/myapplication/MapsActivity.java[m
+[1mindex 933929b..b22aeea 100644[m
+[1m--- a/app/src/main/java/com/example/danby/myapplication/MapsActivity.java[m
+[1m+++ b/app/src/main/java/com/example/danby/myapplication/MapsActivity.java[m
+[36m@@ -1,21 +1,20 @@[m
+ package com.example.danby.myapplication;[m
+ [m
+[32m+[m[32mimport android.Manifest;[m
+ import android.content.Intent;[m
+ import android.content.pm.PackageManager;[m
+ import android.location.Location;[m
+ import android.os.Build;[m
+[32m+[m[32mimport android.os.Bundle;[m
+ import android.support.annotation.NonNull;[m
+ import android.support.annotation.Nullable;[m
+ import android.support.v4.app.ActivityCompat;[m
+ import android.support.v4.app.FragmentActivity;[m
+[31m-import android.os.Bundle;[m
+ import android.support.v4.content.ContextCompat;[m
+ import android.util.Log;[m
+ import android.view.View;[m
+ import android.widget.Button;[m
+[31m-import android.Manifest;[m
+ [m
+[31m-import com.example.danby.myapplication.util.AppUser;[m
+ import com.facebook.AccessToken;[m
+ import com.facebook.AccessTokenTracker;[m
+ import com.facebook.login.LoginManager;[m
+[36m@@ -23,15 +22,16 @@[m [mimport com.google.android.gms.common.ConnectionResult;[m
+ import com.google.android.gms.common.api.GoogleApiClient;[m
+ import com.google.android.gms.location.LocationListener;[m
+ import com.google.android.gms.location.LocationRequest;[m
+[32m+[m[32mimport com.google.android.gms.location.LocationServices;[m
+ import com.google.android.gms.maps.CameraUpdateFactory;[m
+ import com.google.android.gms.maps.GoogleMap;[m
+ import com.google.android.gms.maps.OnMapReadyCallback;[m
+ import com.google.android.gms.maps.SupportMapFragment;[m
+ import com.google.android.gms.maps.model.BitmapDescriptorFactory;[m
+[32m+[m[32mimport com.google.android.gms.maps.model.CameraPosition;[m
+ import com.google.android.gms.maps.model.LatLng;[m
+ import com.google.android.gms.maps.model.Marker;[m
+ import com.google.android.gms.maps.model.MarkerOptions;[m
+[31m-import com.google.android.gms.location.LocationServices;[m
+ [m
+ public class MapsActivity extends FragmentActivity implements[m
+         OnMapReadyCallback,[m
+[36m@@ -68,7 +68,22 @@[m [mpublic class MapsActivity extends FragmentActivity implements[m
+         mapFragment.getMapAsync(this);[m
+         Log.d("lifecycle", "onCreate");[m
+     }[m
+[32m+[m[32m    public void ChangeFragment (View view){[m
+ [m
+[32m+[m[32m        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();[m
+[32m+[m[32m        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();[m
+[32m+[m[32m        ProfileFragment fragment = new ProfileFragment();[m
+[32m+[m[32m        fragmentTransaction.replace(R.id.fragmentmain, fragment);[m
+[32m+[m[32m        fragmentTransaction.commit();[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m    public void CarInfoFragnment (View view){[m
+[32m+[m[32m        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();[m
+[32m+[m[32m        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();[m
+[32m+[m[32m        CarInfoFragment fragment = new CarInfoFragment();[m
+[32m+[m[32m        fragmentTransaction.replace(R.id.fragmentmain, fragment);[m
+[32m+[m[32m        fragmentTransaction.commit();[m
+[32m+[m[32m    }[m
+ [m
+     private void ensureFBLogin() {[m
+         accessTokenTracker = new AccessTokenTracker() {[m
+[36m@@ -162,11 +177,19 @@[m [mpublic class MapsActivity extends FragmentActivity implements[m
+                 buildGoogleApiClient();[m
+                 mMap.setMyLocationEnabled(true);[m
+             }[m
+[31m-        }[m
+[31m-        else {[m
+[32m+[m[32m        } else {[m
+             buildGoogleApiClient();[m
+             mMap.setMyLocationEnabled(true);[m
+         }[m
+[32m+[m[32m        googleMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {[m
+[32m+[m[32m            @Override[m
+[32m+[m[32m            public void onCameraChange(CameraPosition cameraPosition) {[m
+[32m+[m
+[32m+[m[32m                Log.i("centerLat", Double.toString(cameraPosition.target.latitude));[m
+[32m+[m
+[32m+[m[32m                Log.i("centerLong", Double.toString(cameraPosition.target.longitude));[m
+[32m+[m[32m            }[m
+[32m+[m[32m        });[m
+     }[m
+ [m
+     protected synchronized void buildGoogleApiClient() {[m
+[1mdiff --git a/app/src/main/java/com/example/danby/myapplication/ProfileFragment.java b/app/src/main/java/com/example/danby/myapplication/ProfileFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4d7a2f0[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/danby/myapplication/ProfileFragment.java[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mpublic class ProfileFragment extends Fragment  {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_profile, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/java/com/example/danby/myapplication/WhiteFragment.java b/app/src/main/java/com/example/danby/myapplication/WhiteFragment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..0e6bd41[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/java/com/example/danby/myapplication/WhiteFragment.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mpackage com.example.danby.myapplication;[m
+[32m+[m
+[32m+[m[32mimport android.os.Bundle;[m
+[32m+[m[32mimport android.support.v4.app.Fragment;[m
+[32m+[m[32mimport android.view.LayoutInflater;[m
+[32m+[m[32mimport android.view.View;[m
+[32m+[m[32mimport android.view.ViewGroup;[m
+[32m+[m
+[32m+[m[32mpublic class WhiteFragment extends Fragment {[m
+[32m+[m[32m    public View onCreateView(LayoutInflater inflater, ViewGroup container,[m
+[32m+[m[32m                             Bundle savedInstanceState) {[m
+[32m+[m[32m        // Inflate the layout for this fragment[m
+[32m+[m[32m        return inflater.inflate(R.layout.fragment_white, container, false);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/app/src/main/res/layout/activity_maps.xml b/app/src/main/res/layout/activity_maps.xml[m
+[1mindex 8b6a137..22fbb09 100644[m
+[1m--- a/app/src/main/res/layout/activity_maps.xml[m
+[1m+++ b/app/src/main/res/layout/activity_maps.xml[m
+[36m@@ -4,6 +4,8 @@[m
+     android:layout_height="match_parent"[m
+     tools:context=".MapsActivity" >[m
+ [m
+[32m+[m
+[32m+[m
+     <fragment xmlns:android="http://schemas.android.com/apk/res/android"[m
+         xmlns:map="http://schemas.android.com/apk/res-auto"[m
+         xmlns:tools="http://schemas.android.com/tools"[m
+[36m@@ -13,9 +15,17 @@[m
+         android:layout_height="match_parent"[m
+         tools:context="com.example.danby.myapplication.MapsActivity" />[m
+ [m
+[31m-    <Button[m
+[31m-        android:id="@+id/logout_button"[m
+[31m-        android:layout_width="wrap_content"[m
+[31m-        android:layout_height="wrap_content"[m
+[31m-        android:text="Logout" />[m
+[32m+[m[32m    <ImageView[m
+[32m+[m[32m        android:id="@+id/confirm_address_map_custom_marker"[m
+[32m+[m[32m        android:layout_width="@dimen/ICON_DEFAULT_WIDTH"[m
+[32m+[m[32m        android:layout_height="@dimen/ICON_DEFAULT_HEIGHT"[m
+[32m+[m[32m        android:layout_gravity="center"[m
+[32m+[m[32m        android:src="@mipmap/map_marker"/>[m
+[32m+[m
+[32m+[m[32m    <fragment[m
+[32m+[m[32m        android:name="com.example.danby.myapplication.MainFragment"[m
+[32m+[m[32m        android:layout_width="match_parent"[m
+[32m+[m[32m        android:layout_height="match_parent"[m
+[32m+[m[32m        android:id="@+id/fragmentmain" />[m
+[32m+[m
+ </FrameLayout>[m
+[1mdiff --git a/app/src/main/res/layout/fragment_blank.xml b/app/src/main/res/layout/fragment_blank.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..65712de[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/layout/fragment_blank.xml[m
+[36m@@ -0,0 +1,9 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    tools:context="com.example.danby.myapplication.BlankFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/res/layout/fragment_car_info.xml b/app/src/main/res/layout/fragment_car_info.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8ff4c55[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/layout/fragment_car_info.xml[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    android:background="@android:color/background_light"[m
+[32m+[m[32m    tools:context="com.example.danby.myapplication.CarInfoFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:layout_width="match_parent"[m
+[32m+[m[32m        android:layout_height="match_parent"[m
+[32m+[m[32m        android:text="CAR INFORMATION FRAGMENT" />[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/res/layout/fragment_main.xml b/app/src/main/res/layout/fragment_main.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6f20a10[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/layout/fragment_main.xml[m
+[36m@@ -0,0 +1,27 @@[m
+[32m+[m[32m<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    tools:context=".MainFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/logout_button"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:text="Logout" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button2"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="21dp"[m
+[32m+[m[32m        android:layout_alignBottom="@+id/logout_button"[m
+[32m+[m[32m        android:layout_alignParentTop="true"[m
+[32m+[m[32m        android:layout_marginLeft="47dp"[m
+[32m+[m[32m        android:layout_marginStart="47dp"[m
+[32m+[m[32m        android:layout_toEndOf="@+id/logout_button"[m
+[32m+[m[32m        android:layout_toRightOf="@+id/logout_button"[m
+[32m+[m[32m        android:onClick="ChangeFragment"[m
+[32m+[m[32m        android:text="Profile" />[m
+[32m+[m
+[32m+[m[32m</RelativeLayout>[m
+[1mdiff --git a/app/src/main/res/layout/fragment_profile.xml b/app/src/main/res/layout/fragment_profile.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8593540[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/layout/fragment_profile.xml[m
+[36m@@ -0,0 +1,89 @@[m
+[32m+[m[32m<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:id="@+id/fragmentOne"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    android:background="@android:color/background_light"[m
+[32m+[m[32m    tools:context=".ProfileFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button3"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentBottom="true"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:text="LogOut" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button4"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_above="@+id/button3"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:text="Favorites" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button5"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_above="@+id/button4"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:text="History" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button6"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_below="@+id/textView2"[m
+[32m+[m[32m        android:text="getcardinfo from Database" />[m
+[32m+[m
+[32m+[m[32m    <Button[m
+[32m+[m[32m        android:id="@+id/button8"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentEnd="true"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentRight="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_alignParentTop="true"[m
+[32m+[m[32m        android:layout_marginTop="45dp"[m
+[32m+[m[32m        android:onClick="CarInfoFragnment"[m
+[32m+[m[32m        android:text="getCarInfo from Database" />[m
+[32m+[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:id="@+id/textView"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_alignParentTop="true"[m
+[32m+[m[32m        android:layout_marginTop="34dp"[m
+[32m+[m[32m        android:text="Car Information"[m
+[32m+[m[32m        />[m
+[32m+[m
+[32m+[m[32m    <TextView[m
+[32m+[m[32m        android:id="@+id/textView2"[m
+[32m+[m[32m        android:layout_width="wrap_content"[m
+[32m+[m[32m        android:layout_height="wrap_content"[m
+[32m+[m[32m        android:layout_alignParentLeft="true"[m
+[32m+[m[32m        android:layout_alignParentStart="true"[m
+[32m+[m[32m        android:layout_below="@+id/button8"[m
+[32m+[m[32m        android:text="Payment Information" />[m
+[32m+[m
+[32m+[m[32m</RelativeLayout>[m
+[1mdiff --git a/app/src/main/res/layout/fragment_white.xml b/app/src/main/res/layout/fragment_white.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..42ffcdc[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/layout/fragment_white.xml[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"[m
+[32m+[m[32m    xmlns:tools="http://schemas.android.com/tools"[m
+[32m+[m[32m    android:layout_width="match_parent"[m
+[32m+[m[32m    android:layout_height="match_parent"[m
+[32m+[m[32m    android:background="?attr/colorPrimary"[m
+[32m+[m[32m    tools:context="com.example.danby.myapplication.WhiteFragment">[m
+[32m+[m
+[32m+[m[32m    <!-- TODO: Update blank fragment layout -->[m
+[32m+[m
+[32m+[m[32m</FrameLayout>[m
+[1mdiff --git a/app/src/main/res/mipmap-hdpi/map_marker.png b/app/src/main/res/mipmap-hdpi/map_marker.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..93f8ebc[m
+Binary files /dev/null and b/app/src/main/res/mipmap-hdpi/map_marker.png differ
+[1mdiff --git a/app/src/main/res/mipmap-mdpi/map_marker.png b/app/src/main/res/mipmap-mdpi/map_marker.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..93f8ebc[m
+Binary files /dev/null and b/app/src/main/res/mipmap-mdpi/map_marker.png differ
+[1mdiff --git a/app/src/main/res/mipmap-xhdpi/map_marker.png b/app/src/main/res/mipmap-xhdpi/map_marker.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..93f8ebc[m
+Binary files /dev/null and b/app/src/main/res/mipmap-xhdpi/map_marker.png differ
+[1mdiff --git a/app/src/main/res/mipmap-xxhdpi/map_marker.png b/app/src/main/res/mipmap-xxhdpi/map_marker.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..93f8ebc[m
+Binary files /dev/null and b/app/src/main/res/mipmap-xxhdpi/map_marker.png differ
+[1mdiff --git a/app/src/main/res/mipmap-xxxhdpi/map_marker.png b/app/src/main/res/mipmap-xxxhdpi/map_marker.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..93f8ebc[m
+Binary files /dev/null and b/app/src/main/res/mipmap-xxxhdpi/map_marker.png differ
+[1mdiff --git a/app/src/main/res/values/dimen.xml b/app/src/main/res/values/dimen.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7db2b28[m
+[1m--- /dev/null[m
+[1m+++ b/app/src/main/res/values/dimen.xml[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="utf-8"?>[m
+[32m+[m[32m<resources>[m
+[32m+[m[32m    <dimen name="ICON_DEFAULT_WIDTH">30dp</dimen>[m
+[32m+[m[32m    <dimen name="ICON_DEFAULT_HEIGHT">90dp</dimen>[m
+[32m+[m[32m</resources>[m
+\ No newline at end of file[m
